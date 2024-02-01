@@ -11,6 +11,7 @@ export default function PersonalDetails({ updateFormData }) {
     setProfilePhoto(photo);
     updateFormData('profilePhoto', photo); 
   };
+  
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>

@@ -22,10 +22,12 @@ export default function Experience({ updateFormData }) {
         ? { ...workplace, [fieldName]: event.target.value }
         : workplace
     );
-
+  
     setWorkplaces(updatedWorkplaces);
-    updateFormData(updatedWorkplaces);
+    updateFormData(workplaces[workplaceId - 1]);
   };
+  
+
 
   return (
     <React.Fragment>

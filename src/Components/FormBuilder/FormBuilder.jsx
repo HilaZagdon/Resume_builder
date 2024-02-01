@@ -68,29 +68,19 @@ export default function FormBuilder() {
       console.error("Firebase is not initialized yet.");
       return;
     }
-
+  
     const collectionPath = "resumes";
     try {
-      const formData = { education, personalInfo };
-
-      // Convert the experience array to an object with numbered keys
-      const experienceData = experience.reduce((acc, curr, index) => {
-        acc[index + 1] = curr;
-        return acc;
-      }, {});
-
-      formData.experience = experienceData;
-
-      const docRef = await addDoc(collection(dataBase, collectionPath), {
-        ...formData,
-        user: user.uid,
-      });
-
+      const formData = { education, personalInfo, experience, user: user.uid };
+  
+      const docRef = await addDoc(collection(dataBase, collectionPath), formData);
+  
       console.log("Document written with ID: ", docRef.id);
     } catch (error) {
       console.error("Error adding document: ", error);
     }
   };
+  
 
   const updateEducation = (field, value) => {
     setEducation((prevEducation) => ({
@@ -99,9 +89,16 @@ export default function FormBuilder() {
     }));
   };
 
-  const updateExperience = (value) => {
-    setExperience((prevExperience) => [...prevExperience, ...value]);
-  };
+
+const updateExperience = (value) => {
+  setExperience((prevExperience) => [
+    ...prevExperience.slice(0, value.id - 1),
+    value,
+    ...prevExperience.slice(value.id),
+  ]);
+};
+
+
 
   const updatePersonalInfo = (field, value) => {
     setPersonalInfo((prevPersonalInfo) => ({
