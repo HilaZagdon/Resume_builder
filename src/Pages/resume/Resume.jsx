@@ -1,8 +1,10 @@
 import React from 'react'
-
+import FormBuilder from '../../Components/FormBuilder/FormBuilder'
 function Resume() {
   return (
-    <div>Resume</div>
+    <div>
+      <FormBuilder />
+    </div>
   )
 }
 
