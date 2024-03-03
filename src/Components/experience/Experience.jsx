@@ -16,16 +16,18 @@ export default function Experience({ updateFormData }) {
     ]);
   };
 
-  const handleInputChange = (event, workplaceId, fieldName) => {
-    const updatedWorkplaces = workplaces.map((workplace) =>
-      workplace.id === workplaceId
-        ? { ...workplace, [fieldName]: event.target.value }
-        : workplace
-    );
+const handleInputChange = (event, workplaceId, fieldName) => {
+  const updatedWorkplaces = workplaces.map((workplace) =>
+    workplace.id === workplaceId
+      ? { ...workplace, [fieldName]: event.target.value }
+      : workplace
+  );
+
+  setWorkplaces(updatedWorkplaces);
+  updateFormData(updatedWorkplaces[workplaceId - 1]);
+};
+
   
-    setWorkplaces(updatedWorkplaces);
-    updateFormData(workplaces[workplaceId - 1]);
-  };
   
 
 
@@ -44,17 +46,17 @@ export default function Experience({ updateFormData }) {
             >{`Workplace ${workplace.id}`}</Typography>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField
-              required
-              id={`CompanyName${workplace.id}`}
-              name={`CompanyName${workplace.id}`}
-              label="Company Name"
-              fullWidth
-              variant="standard"
-              onChange={(event) =>
-                handleInputChange(event, workplace.id, "companyName")
-              }
-            />
+          <TextField
+  required
+  id={`CompanyName${workplace.id}`}
+  name={`CompanyName${workplace.id}`}
+  label="Company Name"
+  fullWidth
+  variant="standard"
+  onChange={(event) =>
+    handleInputChange(event, workplace.id, "CompanyName")
+  }
+/>
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
@@ -69,18 +71,7 @@ export default function Experience({ updateFormData }) {
               }
             />
           </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              id={`EndYear${workplace.id}`}
-              name={`EndYear${workplace.id}`}
-              label="End Year"
-              fullWidth
-              variant="standard"
-              onChange={(event) =>
-                handleInputChange(event, workplace.id, "EndYear")
-              }
-            />
-          </Grid>
+
           <Grid item xs={12} sm={6}>
             <TextField
               required
@@ -93,6 +84,18 @@ export default function Experience({ updateFormData }) {
               rows={1}
               onChange={(event) =>
                 handleInputChange(event, workplace.id, "StartYear")
+              }
+            />
+          </Grid>          
+          <Grid item xs={12} sm={6}>
+            <TextField
+              id={`EndYear${workplace.id}`}
+              name={`EndYear${workplace.id}`}
+              label="End Year"
+              fullWidth
+              variant="standard"
+              onChange={(event) =>
+                handleInputChange(event, workplace.id, "EndYear")
               }
             />
           </Grid>

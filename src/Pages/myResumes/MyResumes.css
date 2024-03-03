@@ -1,0 +1,113 @@
+.resumeContainer {
+  display: flex;
+  margin-bottom: 4rem;
+  border: 1px solid black;
+  width: 21cm;
+  height: 29.65cm;
+  justify-content: center;
+  align-items: flex-start;
+  page-break-after: always;
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 400;
+  background-color: rgb(238, 238, 238);
+  font-size: 0.8rem;
+}
+
+.leftContent {
+  flex: 2;
+  padding-rem: 1rem;
+}
+
+.rightContent {
+  flex: 1;
+  height: 100%;
+  background-color: rgb(92, 167, 142);
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30rem;
+}
+
+.PersonalContainer {
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.EducationContainer,
+.ExperienceContainer {
+  border-left: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-left: 2rem;
+}
+
+.bigContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.NameOfResume {
+  display: flex;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+}
+
+.PersonalContainer {
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
+
+.workplaceIndex {
+  margin-bottom: 2rem;
+}
+
+.DatesOf-start-end {
+  font-weight: 500;
+}
+
+.workplaceIndex {
+  margin-bottom: 2rem;
+  display: flex;
+}
+
+.DatesOf-start-end {
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.workplaceDetails {
+  flex: 1;
+  margin-top: 1.5rem;
+}
+
+.educationIndex {
+  margin-bottom: 2rem;
+  display: flex;
+}
+
+.educationDescription {
+  flex: 1;
+}
+
+.educationDetails {
+  margin-top: 1.5rem;
+}
+
+.profilePhoto {
+  display: flex;
+  justify-content: center;
+  margin-left: -1rem;
+  margin-bottom: 2rem;
+}

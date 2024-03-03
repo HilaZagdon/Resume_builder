@@ -55,6 +55,16 @@ export default function Education({ updateFormData }) {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            id="startingYear"
+            name="startingYear"
+            label="Starting Year"
+            fullWidth
+            variant="standard"
+            onChange={(e) => updateFormData("startingYear", e.target.value)}
+          />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <TextField
             id="graduationYear"
             name="graduationYear"
             label="Graduation Year"

@@ -90,13 +90,14 @@ export default function FormBuilder() {
   };
 
 
-const updateExperience = (value) => {
-  setExperience((prevExperience) => [
-    ...prevExperience.slice(0, value.id - 1),
-    value,
-    ...prevExperience.slice(value.id),
-  ]);
-};
+  const updateExperience = (value) => {
+    setExperience((prevExperience) => [
+      ...prevExperience.slice(0, value.id - 1),
+      { ...prevExperience[value.id - 1], ...value },
+      ...prevExperience.slice(value.id),
+    ]);
+  };
+  
 
 
 

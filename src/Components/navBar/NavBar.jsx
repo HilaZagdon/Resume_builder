@@ -74,6 +74,7 @@ const NavBar = () => {
         <Nav className="me-auto navbar-dark navbar-light">
           <Nav.Link  href="/myResumes">My Resumes</Nav.Link>
           <Nav.Link href="/resume">Create Resume</Nav.Link>
+          {/* <Nav.Link href="/auth">Auth</Nav.Link> */}
           {/* <NavDropdown title="drowdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">

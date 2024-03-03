@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./Pages/home/Home";
 import MyResumes from "./Pages/myResumes/MyResumes";
 import Resume from "./Pages/resume/Resume";
+import Auth from './Pages/auth/Auth';
 
 const App = () => {
   const [showSignIn, setShowSignIn] = useState(false);
@@ -65,6 +66,12 @@ const App = () => {
                 <SignIn />
               }
             />
+                           <Route
+              path="/auth"
+              element={
+                <Home />
+              }
+            />
             {/* <Route path="*" element={<NotFound />} /> */}
           </Routes>
         ) : (
@@ -93,6 +100,14 @@ const App = () => {
                 <Home />
               }
             />
+               <Route
+              path="/auth"
+              element={
+                <Auth />
+              }
+            />
+
+
           </Routes>
         )}
       </BrowserRouter>
